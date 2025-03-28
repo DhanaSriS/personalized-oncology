@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cancer Treatment Predictor</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="navbar">
+    <a href="web.html">Home</a>
+    <a href="about.html" class="active">About Us</a>
+    <a href="trynow.html">Try</a>
+    <a href="signin.html">Sign In/ Register</a>
+</nav>
+  <div class="container">
+    <h1>Cancer Treatment Predictor</h1>
+    <form id="patientForm">
+      <label for="diet">Diet (Healthy/Average/Unhealthy):</label>
+      <input type="text" id="diet" name="diet" required>
+
+      <label for="exercise">Exercise (Low/Moderate/High):</label>
+      <input type="text" id="exercise" name="exercise" required>
+
+      <label for="smoking">Smoking (Yes/No):</label>
+      <input type="text" id="smoking" name="smoking" required>
+
+      <label for="alcohol">Alcohol (None/Low/Moderate/High):</label>
+      <input type="text" id="alcohol" name="alcohol" required>
+
+      <label for="weight">Weight (in kg):</label>
+      <input type="number" id="weight" name="weight" required>
+
+      <label for="cancerType">Cancer Type (Breast/Lung/Colon/Prostate/Skin/Leukemia/Lymphoma):</label>
+      <input type="text" id="cancerType" name="cancerType" required>
+
+      <label for="stage">Cancer Stage (I/II/III/IV):</label>
+      <input type="text" id="stage" name="stage" required>
+
+      <label for="severity">Severity (Low/Moderate/High):</label>
+      <input type="text" id="severity" name="severity" required>
+
+      <button type="submit">Predict Treatment</button>
+    </form>
+
+    <div id="results" class="results">
+      <h2>Predicted Treatment Recommendations</h2>
+      <ul id="treatments"></ul>
+
+      <h2>Recommended Drugs and Dosages</h2>
+      <ul id="drugs"></ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

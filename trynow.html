@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patient Information Input</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      margin: 0;
+      padding: 0;
+    }
+    .navbar {
+    display: flex;
+    justify-content: flex-end; /* Aligns content to the right */
+    align-items: center;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1rem; /* Adds spacing between links */
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar a:hover {
+    background-color: white;
+    color: #b8d1eb;
+    border-radius: 5px;
+}
+
+.navbar a.active {
+    background-color: white;
+    color: #b8d1eb;
+    border-radius: 5px;
+}
+    .container {
+      max-width: 800px;
+      margin: 100px auto 20px; /* Adjusted for navbar */
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      color: #333;
+      text-align: center;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    label {
+      margin: 10px 0 5px;
+      font-weight: bold;
+      color: #555;
+    }
+    input, select {
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+    button {
+      padding: 10px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #2980b9;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <a href="web.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="trynow.html">Try Now</a>
+    <a href="signin.html">Sign In/ Register</a>
+  </nav>
+
+  <!-- Input Form -->
+  <div class="container">
+    <h1>Patient Information Input</h1>
+    <form id="patientInfoForm">
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age" required>
+
+      <label for="gender">Gender (Male/Female):</label>
+      <select id="gender" name="gender" required>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+      </select>
+
+      <label for="tumorSize">Tumor Size (in cm):</label>
+      <input type="number" id="tumorSize" name="tumorSize" step="0.1" required>
+
+      <label for="pulse">Pulse Rate (beats per minute):</label>
+      <input type="number" id="pulse" name="pulse" required>
+
+      <label for="respiratoryRate">Respiratory Rate (breaths per minute):</label>
+      <input type="number" id="respiratoryRate" name="respiratoryRate" required>
+
+      <label for="bpsys">Systolic Blood Pressure (mmHg):</label>
+      <input type="number" id="bpsys" name="bpsys" required>
+
+      <label for="bpdias">Diastolic Blood Pressure (mmHg):</label>
+      <input type="number" id="bpdias" name="bpdias" required>
+
+      <label for="oxygenSaturation">Oxygen Saturation (percentage):</label>
+      <input type="number" id="oxygenSaturation" name="oxygenSaturation" step="0.1" required>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("patientInfoForm").addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      // Collect form data
+      const patientInfo = {
+        age: document.getElementById("age").value,
+        gender: document.getElementById("gender").value,
+        tumorSize: document.getElementById("tumorSize").value,
+        pulse: document.getElementById("pulse").value,
+        respiratoryRate: document.getElementById("respiratoryRate").value,
+        bpsys: document.getElementById("bpsys").value,
+        bpdias: document.getElementById("bpdias").value,
+        oxygenSaturation: document.getElementById("oxygenSaturation").value,
+      };
+
+      // Store data in localStorage
+      localStorage.setItem("patientInfo", JSON.stringify(patientInfo));
+
+      // Redirect to the next page (e.g., image upload or result page)
+      window.location.href = "imageupload.html"; // Change this to the desired page
+    });
+  </script>
+</body>
+</html>

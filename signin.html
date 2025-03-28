@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .navbar {
+    display: flex;
+    justify-content: flex-end; /* Aligns content to the right */
+    align-items: center;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1rem; /* Adds spacing between links */
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar a:hover {
+    background-color: white;
+    color: #b8d1eb;
+    border-radius: 5px;
+}
+
+.navbar a.active {
+    background-color: white;
+    color: #b8d1eb;
+    border-radius: 5px;
+}
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url('ribbon\ \(2\).jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .login-container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+            backdrop-filter: blur(5px);
+        }
+        .login-container h2 {
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+        .login-container input[type="text"],
+        .login-container input[type="password"] {
+            width: 100%;
+            padding: 0.75rem;
+            margin: 0.5rem 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+        .login-container .options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 1rem 0;
+        }
+        .login-container .options label {
+            font-size: 0.9rem;
+            color: #555;
+        }
+        .login-container .options a {
+            font-size: 0.9rem;
+            color: #2a2b2b;
+            text-decoration: none;
+        }
+        .login-container .options a:hover {
+            text-decoration: underline;
+        }
+        .login-container button {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: #2a2b2b;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        .login-container button:hover {
+            background-color: #161617;
+        }
+        .login-container .register-link {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: #555;
+        }
+        .login-container .register-link a {
+            color: #2a2b2b;
+            text-decoration: none;
+        }
+        .login-container .register-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="web.html" class="active">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="trynow.html">Try</a>
+        <a href="signin.html">Sign In/ Register</a>
+    </nav>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <div class="options">
+                <label>
+                    <input type="checkbox"> Remember me
+                </label>
+                <a href="#">Forgot Password?</a>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+        <div class="register-link">
+            Don’t have an account? <a href="register.html">Register</a>
+        </div>
+    </div>
+
+    <script>
+        // Handle form submission
+        document.getElementById('loginForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent the form from submitting the traditional way
+
+            // Get input values
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Simple validation (replace with your actual logic)
+            if (username === "user" && password === "password") {
+                // Redirect to the details page if login is successful
+                window.location.href = "details.html";
+            } else {
+                // Redirect to the register page if login fails (or account doesn't exist)
+                alert("Invalid username or password. Please register if you don't have an account.");
+                window.location.href = "register.html";
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upload Image</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url('ribbon\ \(2\).jpg');
+            background-size: cover;
+            background-position: center;
+      background-color: #f4f4f9;
+      margin: 0;
+      padding: 0;
+    }
+    .navbar {
+    display: flex;
+    justify-content: flex-end; /* Aligns content to the right */
+    align-items: center;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1rem; /* Adds spacing between links */
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar a:hover {
+    background-color: white;
+    color: #b8d1eb;
+    border-radius: 5px;
+}
+
+.navbar a.active {
+    background-color: white;
+    color: #b8d1eb;
+    border-radius: 5px;
+}
+    .container {
+      max-width: 800px;
+      margin: 100px auto 20px; /* Adjusted for navbar */
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      color: #333;
+      text-align: center;
+    }
+    input[type="file"] {
+      margin: 20px 0;
+    }
+    button {
+      padding: 10px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #2980b9;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <a href="web.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="trynow.html">Try Now</a>
+    <a href="signin.html">Sign In/ Register</a>
+  </nav>
+
+  <!-- Image Upload Form -->
+  <div class="container">
+    <h1>Upload Your Medical Image</h1>
+    <form id="imageUploadForm">
+      <input type="file" id="image" name="image" accept="image/*" required>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("imageUploadForm").addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      // Redirect to the result page
+      window.location.href = "result.html";
+    });
+  </script>
+</body>
+</html>

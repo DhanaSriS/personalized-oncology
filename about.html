@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="web.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f4f9;
+            background-image: url(ribbon\ \(2\).jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .navbar {
+    display: flex;
+    justify-content: flex-end; /* Aligns content to the right */
+    align-items: center;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1rem; /* Adds spacing between links */
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar a:hover {
+    background-color: white;
+    color: #b8d1eb;
+    border-radius: 5px;
+}
+
+.navbar a.active {
+    background-color: white;
+    color: #b8d1eb;
+    border-radius: 5px;
+}
+        section {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: 2rem;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        #about .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            width: 80%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+        }
+        #about .left-container {
+            flex: 1;
+            text-align: left;
+            padding-right: 2rem;
+            border-right: 2px solid white;
+        }
+        #about .right-container {
+            flex: 2;
+            text-align: left;
+            padding-left: 2rem;
+        }
+        #about h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        #about p {
+
+            justify-content: center;
+            text-align: justify;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: white;
+        }
+        .footer {
+            background-color: #131313;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="web.html">Home</a>
+        <a href="about.html" class="active">About Us</a>
+        <a href="trynow.html">Try Now</a>
+        <a href="signin.html">Sign In/ Register</a>
+    </nav>
+
+    <section id="about">
+        <div class="container">
+            <div class="left-container">
+                <h1>About Us</h1>
+            </div>
+            <div class="right-container">
+                <p>Our Personalized Oncology Platform leverages advanced AI and machine learning to predict cancer types and recommend tailored treatments based on patient data and medical images.
+                    
+                   By analyzing lifestyle factors, environmental data, and clinical information, we provide actionable insights to improve treatment outcomes. 
+                                
+                   This project aims to bridge the gap between technology and healthcare, empowering doctors and patients with data-driven decisions for better cancer care.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <div class="footer">
+        <p>&copy; 2024 Our Hospital. All rights reserved.</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url('ribbon\ \(2\).jpg'); /* Add a background image if needed */
+            background-size: cover;
+            background-position: center;
+        }
+        .navbar {
+    display: flex;
+    justify-content: flex-end; /* Aligns content to the right */
+    align-items: center;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1rem; /* Adds spacing between links */
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar a:hover {
+    background-color: white;
+    color: #b8d1eb;
+    border-radius: 5px;
+}
+
+.navbar a.active {
+    background-color: white;
+    color: #b8d1eb;
+    border-radius: 5px;
+}
+        .register-container {
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+            backdrop-filter: blur(5px); /* Optional: Adds a blur effect to the background */
+        }
+        .register-container h1 {
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+        .register-container input[type="text"],
+        .register-container input[type="email"],
+        .register-container input[type="password"],
+        .register-container input[type="date"] {
+            width: 100%;
+            padding: 0.75rem;
+            margin: 0.5rem 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+            background-color: rgba(255, 255, 255, 0.9); /* Slightly opaque background for inputs */
+        }
+        .register-container .login-link {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: #555;
+        }
+        .register-container .login-link a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        .register-container .login-link a:hover {
+            text-decoration: underline;
+        }
+        .register-container button {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: #161617;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        .register-container button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="web.html">Home</a>
+        <a href="about.html" class="active">About Us</a>
+        <a href="services.html">Try</a>
+        <a href="signin.html">Sign In/ Register</a>
+    </nav>
+    <div class="register-container">
+        <h1>Create new Account</h1>
+        <form id="registerForm">
+            <input type="text" id="name" placeholder="Name" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <input type="date" id="dob" required>
+            <button type="submit">Sign Up</button>
+        </form>
+        <div class="login-link">
+            Already Registered? <a href="signin.html">Login</a>
+        </div>
+    </div>
+
+    <script>
+        // Handle form submission
+        document.getElementById('registerForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent the form from submitting the traditional way
+
+            // Get input values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const dob = document.getElementById('dob').value;
+
+            // Simple validation (replace with your actual logic)
+            if (name && email && password && dob) {
+                // Redirect to the details page if registration is successful
+                alert("Registration successful!");
+                window.location.href = "details.html";
+            } else {
+                alert("Please fill in all fields.");
+            }
+        });
+    </script>
+</body>
+</html>
